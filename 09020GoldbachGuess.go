@@ -42,10 +42,15 @@ func main() {
 	var t int
 	Fscanln(r, &t)
 	for ; t > 0; t-- {
+		//n의 골드바흐 수를 구해야 함
 		var n int
 		Fscanln(r, &n)
+		// 일단 가장 차이가 적어야 하므로 2분의 1을 각각 할당
 		gb1, gb2 := n/2, n/2
+		// 소수인지 확인
 		cnt1, cnt2 := checker(gb1), checker(gb2)
+		// 둘 중 하나라도 소수가 아니면 계속 반복문 돌아감
+		// golang은 while이 없이 for에 조건식을 주면 while처럼 작동
 		for cnt1 != 0 || cnt2 != 0 {
 			gb1--
 			gb2++
