@@ -1,5 +1,6 @@
 // Solved By Github YoonBaek
 // Q : https://www.acmicpc.net/problem/10757
+// 미완성된 코드입니다.
 
 package main
 
@@ -8,37 +9,34 @@ import (
 	. "fmt"
 	"math"
 	"os"
-	"strconv"
 )
 
 func main() {
 	r, w := bufio.NewReader(os.Stdin), bufio.NewWriter(os.Stdout)
-	defer w.Flush()cv
+	defer w.Flush()
 	var a, b string
+
 	Fscanf(r, "%s %s\n", &a, &b)
-	v, v0, t := 0, 0, 0
-	var sth, sth2, result string
-	if len(a) >= len(b) {
-		t = len(b)
-	} else {
-		t = len(a)
-	}
-	for ; t > 0; t-- {
-		if (t-1)%18 == 0 {
-			if v/int(math.Pow10(len(sth))) == 1 {
-				v0++
-			}
-			sth = ""
-			sth2 = ""
-			result += string(v0)
+	digitsA, digitsB := make([]int, len(a)), make([]int, len(b))
+	for i, Rune := range a {
+		digitsA[len(a)-1-i] = int(Rune - 48)
+		if i > len(b)-1 {
+			continue
 		}
-		sth += string(a[len(a)-t])
-		sth2 += string(b[len(b)-t])
-		r1, _ := strconv.Atoi(sth)
-		r2, _ := strconv.Atoi(sth2)
-		v = r1 + r2
-		v0 = v
-		Println(len(a), len(b), t, v/int(math.Pow10(len(sth))), r1, r2, result)
+		digitsB[len(b)-1-i] = int(b[i] - 48)
 	}
-	Fprintln(w, a, b, len(a))
+	sum := 0
+
+	for i := 0; i < len(a); i++ {
+		if i != 0 && i%18 != 0 {
+			if i > len(b) {
+				sth := (digitsA[i] + digitsB[i]) * int(math.Pow10(i))
+				continue
+			}
+			sth := (digitsA[i] + digitsB[i]) * int(math.Pow10(i))
+			sum += sth
+			Println(sum)
+		}
+	}
+	Fprintln(w, a, b, len(a), digitsA, digitsB)
 }
