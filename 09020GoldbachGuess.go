@@ -55,7 +55,6 @@ func main() {
 			}
 		}
 	}
-	Println(primes)
 	for ; t > 0; t-- {
 		//n의 골드바흐 수를 구해야 함
 		var n int
