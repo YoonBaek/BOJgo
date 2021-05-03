@@ -1,5 +1,6 @@
 // Solved by Github YoonBaek
 // Q : https://www.acmicpc.net/problem/16395
+// 재귀로 푸는 것 보단 배열로 푸는게 빠를 거 같아서 배열로 품
 
 package main
 
