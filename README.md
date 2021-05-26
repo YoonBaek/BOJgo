@@ -1,3 +1,7 @@
+# Problem Solver : BOJ baekyoon
+2021/05/26  
+현재 Golang rank : 29 of 1421 (KOR)  
+어려운 문제도 풀어서 내실 있게 순위를 올리고 싶다.
 # How to test
 ```zsh
 go run gocodename.go
