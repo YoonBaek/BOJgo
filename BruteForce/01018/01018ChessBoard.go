@@ -5,7 +5,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -16,7 +15,7 @@ func main() {
 	wr := bufio.NewWriter(os.Stdout)
 	defer wr.Flush()
 	var n, m, cntB, cntW int
-	min := int(math.Inf(1))
+	min := 2500
 
 	if sc.Scan() {
 		input := sc.Text()
