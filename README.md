@@ -1,6 +1,6 @@
 # Problem Solver : BOJ baekyoon
-2021/06/15
-Current BOJ GoLang rank : 25th / 1453
+2021/06/15  
+Current BOJ GoLang rank : 25th / 1453  
 어려운 문제도 풀어서 내실 있게 순위를 올리자!
 # How to test
 ```zsh
